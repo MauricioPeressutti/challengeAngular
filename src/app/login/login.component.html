@@ -1,0 +1,22 @@
+<section>
+    
+    <div class="card">
+        <div class="logo">
+            <img src="../../assets/logos/LOGO1.png" alt="">
+        </div>
+        <div class="form">
+            <form class="example-form">
+                <div class="input">
+                    <input class="top-input" name="user" type="text" placeholder="Username" [(ngModel)]="user">
+                </div>
+                <div class="input">
+                    <input class="bot-input" type="password" name="password" placeholder="Password" [(ngModel)]="password">
+                </div>
+            </form>
+        </div>
+        <div class="fin-form">
+            <mat-checkbox class="example-margin">remember</mat-checkbox>
+            <button mat-button (click)="function()">Log In</button>
+        </div>
+    </div>
+</section>
