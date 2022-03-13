@@ -1,1 +1,38 @@
-<p>list works!</p>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col mb-2">
+            <div class="card">
+                <mat-tab-group>
+                    <mat-tab label="Productos">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Currency</th>
+                                    <th scope="col">Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="item" *ngFor="let product of productsListAux" (click)="onClick(product)">
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.description}}</td>
+                                    <td>{{product.currency}}</td>
+                                    <td>{{product.price}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </mat-tab>
+                  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+                    
+                    <button mat-raised-button style="float: right;"
+                            class="example-delete-tab-button"
+                            (click)="removeTab(index)">
+                      Cerrar
+                    </button>
+                  </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+      
