@@ -4,6 +4,7 @@ import { ListComponent } from './list/list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
+import { ProductComponent } from './list/product/product.component';
 
 
 
@@ -12,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     ListComponent,
+    ProductComponent,
   ],
   imports: [
     CommonModule,

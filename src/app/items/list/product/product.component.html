@@ -1,0 +1,15 @@
+
+    <div class="row p-3">
+        <div class="col-4" *ngIf="detail.pictures">
+            <div class="imgs" *ngFor="let img of detail.pictures">
+                <img src="{{img}}" alt="">
+            </div>
+        </div>
+        <div class="col-4">
+            <h4>{{detail.name}}</h4>
+            <p>{{detail.description}}</p>
+            <span class="badge bg-secondary" style="font-weight:500;">{{detail.price}} {{detail.currency}}</span>
+            
+        </div>
+    </div>
+

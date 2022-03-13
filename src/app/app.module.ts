@@ -17,12 +17,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { InterceptService } from './service/intercept.service';
 import {MatCardModule} from '@angular/material/card';
 import { ItemsModule } from './items/items.module';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

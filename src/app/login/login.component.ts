@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
       }
     },(error: any)  =>{
       if(error.status == 400){
-        this._snackBar.open(error.error.msg)
+        this._snackBar.open(error.error.msg ? error.error.msg : 'Error al logear' , 'Cerrar')
+      }else{
+        this._snackBar.open('Error')
       }
     })
   }

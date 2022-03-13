@@ -22,14 +22,29 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="row mt-2">
+                            <div class="col d-flex justify-content-center">
+                                <button mat-raised-button style="margin-right: 1rem;" (click)="addMoreElementoToList(5)">Cargar mas</button>
+                                <button mat-raised-button style="background-color: blueviolet;" (click)="toForm()">Añadir producto</button>
+                            </div>
+                        </div>
                     </mat-tab>
-                  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
-                    
-                    <button mat-raised-button style="float: right;"
-                            class="example-delete-tab-button"
-                            (click)="removeTab(index)">
-                      Cerrar
-                    </button>
+                  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab.name">
+                    <div class="row">
+                        <div class="col">
+                            <button mat-raised-button style="float: right; margin-right: 2rem;"
+                                    class="example-delete-tab-button"
+                                    (click)="removeTab(index)"
+                                    >
+                              Cerrar
+                            </button>
+                        </div>
+                    </div>
+                    <app-product [detail]="tab"></app-product>
+                    <div class="row">
+                        <div class="col">
+                        </div>
+                    </div>
                   </mat-tab>
                 </mat-tab-group>
             </div>

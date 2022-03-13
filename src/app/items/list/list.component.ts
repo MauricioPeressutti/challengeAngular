@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
 import {ViewEncapsulation} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +17,8 @@ export class ListComponent implements OnInit {
   colorTab = 'primary';
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,9 +30,17 @@ export class ListComponent implements OnInit {
     this.productService.getProducts().subscribe((response:any)=>{
       if(response){
         this.productsList = response;
-        this.loadListOfProducts(3);
+        this.loadListOfProducts(5);
       }
     })
+  }
+
+  addMoreElementoToList(loadNumber:number){
+    loadNumber = loadNumber + this.aux
+    let array = this.productsList.slice(this.aux,loadNumber)
+    debugger
+    this.productsListAux.push.apply(this.productsListAux,array)
+    this.aux = this.aux + loadNumber; 
   }
 
   loadListOfProducts(loadNumber: number){
@@ -40,7 +50,7 @@ export class ListComponent implements OnInit {
 
 
     addTab( obj:any) {
-      this.tabs.push(obj.name);
+      this.tabs.push(obj);
       
     }
   
@@ -51,9 +61,10 @@ export class ListComponent implements OnInit {
 
 
     onClick(product:any){
-      debugger
       this.addTab(product)
     }
 
-    
+    toForm(){
+      this.router.navigate(['addProduct']);
+    }
 }
