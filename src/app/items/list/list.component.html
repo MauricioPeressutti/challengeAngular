@@ -14,7 +14,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="item" *ngFor="let product of productsListAux" (click)="onClick(product)">
+                                <tr class="item" *ngFor="let product of productsListAux" matTooltip="click me" (click)="onClick(product)">
                                     <td>{{product.name}}</td>
                                     <td>{{product.description}}</td>
                                     <td>{{product.currency}}</td>

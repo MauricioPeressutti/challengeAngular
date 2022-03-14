@@ -36,11 +36,12 @@ export class ListComponent implements OnInit {
   }
 
   addMoreElementoToList(loadNumber:number){
+    
     loadNumber = loadNumber + this.aux
     let array = this.productsList.slice(this.aux,loadNumber)
-    debugger
+    
     this.productsListAux.push.apply(this.productsListAux,array)
-    this.aux = this.aux + loadNumber; 
+    this.aux =  loadNumber; 
   }
 
   loadListOfProducts(loadNumber: number){

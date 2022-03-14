@@ -11,13 +11,14 @@ import { LoginComponent } from './login/login.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { InterceptService } from './service/intercept.service';
 import {MatCardModule} from '@angular/material/card';
 import { ItemsModule } from './items/items.module';
 import { AddProductComponent } from './add-product/add-product.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -41,7 +42,13 @@ import { AddProductComponent } from './add-product/add-product.component';
     HttpClientModule,
     MatSnackBarModule,
     MatCardModule,
-    ItemsModule
+    ItemsModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, 

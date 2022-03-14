@@ -1,18 +1,33 @@
 <div class="container">
-    <div class="card mt-5 form">
+    <div class="card mt-5 form p-3">
         <h3 class="p-2">Agregar Producto</h3>
-        <div class="row">
-            <div class="col-6">
+        <div [formGroup]="productFormGroup" class="row p-3">
+            <div class="col-6 d-flex justify-content-center">
                 <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="Sushi">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nameCtrl">
                   </mat-form-field>
             </div>
             <div class="col-6">
                 <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="Sushi">
+                    <mat-label>Tipo de moneda</mat-label>
+                    <input matInput formControlName="currencyCtrl">
                   </mat-form-field>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Precio</mat-label>
+                    <input matInput formControlName="priceCtrl">
+                  </mat-form-field>
+            </div>
+
+            <div class="col-6">
+                    <mat-label>Adjuntar Imagen</mat-label>
+                    <input type="file" formControlName="fileCtrl">
+            </div>
+
+            <div class="col-12">
+                <button mat-raised-button style="background-color: blueviolet;" (click)="addProduct()">Añadir producto</button>
             </div>
         </div> 
     </div>
